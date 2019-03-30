@@ -1,0 +1,133 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            // 开启混淆
+            minifyEnabled true
+            // 压缩优化
+            zipAlignEnabled true
+            // 默认的混淆文件以及我们指定的混淆文件，子模块使用 consumerProguardFiles
+            consumerProguardFiles 'proguard-rules.pro'
+
+            // 接口访问地址
+            buildConfigField('String', 'SERVER_URL', '"https://api.tuchong.com/"')
+
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+
+        debug {
+            // 开启混淆
+            minifyEnabled false
+            // 压缩优化
+            zipAlignEnabled true
+
+            // 接口访问地址
+            buildConfigField('String', 'SERVER_URL', '"https://api.tuchong.com/"')
+
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    generateStubs = true
+    arguments {
+        arg("moduleName", project.getName())
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api rootProject.ext.dependencies["alibaba_arouter"]
+
+    api rootProject.ext.dependencies["bumptech_glide"]
+    kapt rootProject.ext.dependencies["bumptech_glide_compiler"]
+
+    api rootProject.ext.dependencies["google_gson"]
+
+    api rootProject.ext.dependencies["google_room"]
+    api rootProject.ext.dependencies["google_room_rxjava2"]
+    kapt rootProject.ext.dependencies["google_room_complier"]
+
+    api rootProject.ext.dependencies["reactivex_rxandroid"]
+    api rootProject.ext.dependencies["reactivex_rxjava"]
+    api rootProject.ext.dependencies["support_appcompat_v7"]
+    api rootProject.ext.dependencies["support_cardview_v7"]
+    api rootProject.ext.dependencies["support_constraint"]
+    api rootProject.ext.dependencies["support_multidex"]
+    api rootProject.ext.dependencies["support_design"]
+    api rootProject.ext.dependencies["squareup_retrofit2_converter_gson"]
+    api rootProject.ext.dependencies["jakewharton_retrofit2_adapter"]
+    api rootProject.ext.dependencies["squareup_retrofit2_retrofit"]
+    api rootProject.ext.dependencies["squareup_okhttp3_logging_interceptor"]
+    api rootProject.ext.dependencies["squareup_okhttp3_okhttp"]
+    api rootProject.ext.dependencies["squareup_okio_okio"]
+    api rootProject.ext.dependencies["tbruyelle_rxpermissions"]
+    api rootProject.ext.dependencies["zibin_luban"]
+
+    api 'com.google.dagger:dagger:2.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+
+    api rootProject.ext.dependencies["kotlin"]
+
+    // glide
+    api(rootProject.ext.dependencies["bumptech_glide"]) {
+        exclude module: 'support-v4'
+    }
+    annotationProcessor(rootProject.ext.dependencies["bumptech_glide_compiler"]) {
+        exclude module: 'jsr305'
+    }
+
+    // log and test
+    api rootProject.ext.dependencies["timber"]
+    api(rootProject.ext.dependencies["material_dialogs_core"]) {
+        exclude module: 'support-v13'
+    }
+
+    def lifecycle_version = "1.1.1"
+    api "android.arch.lifecycle:extensions:$lifecycle_version"
+    api "android.arch.lifecycle:viewmodel:$lifecycle_version"
+    api "android.arch.lifecycle:livedata:$lifecycle_version"
+    api "android.arch.lifecycle:runtime:$lifecycle_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
+    api "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+
+}
+
+repositories {
+    mavenCentral()
+}

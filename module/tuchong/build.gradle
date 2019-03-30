@@ -1,0 +1,97 @@
+if (tcIsModule.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        resourcePrefix "tc_"
+
+        if (!tcIsModule.toBoolean()) {
+            applicationId "vip.qsos.tuchong"
+        }
+
+        // apk 方法数超过 65536 限制，进行分包处理
+        multiDexEnabled true
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    sourceSets {
+        main {
+            if (!tcIsModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                // 集成开发模式下排除 debug 文件夹中的所有 Java 文件
+                java {
+                    exclude 'module/**'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            // 开启混淆
+            minifyEnabled true
+            // 压缩优化
+            zipAlignEnabled true
+            // 默认的混淆文件以及我们指定的混淆文件，子模块使用 consumerProguardFiles
+            consumerProguardFiles 'proguard-rules.pro'
+
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+kapt {
+    generateStubs = true
+    arguments {
+        arg("moduleName", project.getName())
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':module:common')
+
+    api rootProject.ext.dependencies["kotlin"]
+
+    kapt rootProject.ext.dependencies["alibaba_arouter_compiler"]
+}
+
+repositories {
+    mavenCentral()
+}

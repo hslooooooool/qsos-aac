@@ -1,0 +1,15 @@
+// 项目 APP
+include ':app'
+
+// 基础架包
+include ':library:base'
+// 自定义控件
+include ':library:widget'
+// 网络服务
+include ':library:netservice'
+
+// 公共模块
+include ':module:common'
+
+// 图虫模块
+include ':module:tuchong'

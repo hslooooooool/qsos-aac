@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app">QSOS</string>
+
+    <!-- module -->
+    <string name="module_tc">DEMO图虫</string>
+
+    <!-- normal -->
+    <string name="sure">确认</string>
+    <string name="welcome">—— 让工作更简单 ——</string>
+
+</resources>

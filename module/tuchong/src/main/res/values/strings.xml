@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tc_img_recommend">推荐图片</string>
+    <string name="tc_img_photos">组图标识</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="not_find">未检测到导航应用</string>
+    <string name="close">关闭</string>
+    <string name="label">标题</string>
+
+</resources>

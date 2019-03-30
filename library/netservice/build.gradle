@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+    }
+
+    buildTypes {
+        release {
+            // 开启混淆
+            minifyEnabled true
+            // 压缩优化
+            zipAlignEnabled true
+            // 默认的混淆文件以及我们指定的混淆文件，子模块使用 consumerProguardFiles
+            consumerProguardFiles 'proguard-rules.pro'
+
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+}
+
+kapt {
+    generateStubs = true
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // 基础架包
+    api project(":library:base")
+    api project(":library:widget")
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+}
+
+repositories {
+    mavenCentral()
+}

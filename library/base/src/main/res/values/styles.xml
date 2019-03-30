@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--自定义配置主题-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_exit</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_back_enter</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_back_exit</item>
+    </style>
+
+    <!--主体按钮样式-->
+    <style name="MainButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_42</item>
+        <item name="android:layout_marginLeft">@dimen/dp_24</item>
+        <item name="android:layout_marginRight">@dimen/dp_24</item>
+        <item name="android:background">@drawable/bg_rectangle_primary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    <!--标签页字体大小-->
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <!--弹窗确认按钮样式-->
+    <style name="PopSureButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_42</item>
+        <item name="android:background">@drawable/bg_pop_sure</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+</resources>
