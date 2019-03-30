@@ -32,4 +32,4 @@
 有兴趣请交流。
 - 微信：hslooooooool 
 - Github：hslooooooool
-- 个人博客：www.qsos.vip  www.yuque.com/qsos www.jianshu.com/u/57cc7206b1b2
+- 个人博客：www.qsos.vip  www.yuque.com/qsos www.jianshu.com/u/57cc7206b1b2 https://juejin.im/user/57d0b35d2e958a0054483695
