@@ -12,7 +12,7 @@ import qsos.module.common.api.ApiTC
  * @date : 2019/1/23
  * @description : 基础数据服务
  */
-open class BaseRepository {
+open class BaseModuleRepository {
 
     /*用户接口*/
     val serviceUser = ApiEngine.getInstance(BuildConfig.SERVER_URL).create(ApiBase::class.java)!!

@@ -10,7 +10,7 @@ import qsos.module.common.api.TCRecommendForm
 /**
  * @author : 华清松
  * @date : 2019/1/24
- * @description : 图虫数据获取
+ * @description : 图虫数据接口实现
  */
 class TCModelIml(
         private val tcRepository: TCRepository

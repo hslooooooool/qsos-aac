@@ -16,7 +16,7 @@ abstract class BaseAdapter<T : BaseEntity>(var data: ArrayList<T>) : RecyclerVie
     var mOnItemClickListener: OnRecyclerViewItemClickListener<T>? = null
 
     private var mHolder: BaseHolder<T>? = null
-    protected var mContext: Context? = null
+    private var mContext: Context? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHolder<T> {
         mContext = parent.context
