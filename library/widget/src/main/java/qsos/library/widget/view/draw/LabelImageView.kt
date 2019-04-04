@@ -92,7 +92,6 @@ class LabelImageView : AppCompatImageView {
      */
     private fun calculatePath(measuredWidth: Int) {
 
-
         val x1 = (measuredWidth - a - b).toFloat()
         val x2 = (measuredWidth - b).toFloat()
         val y1 = b.toFloat()
