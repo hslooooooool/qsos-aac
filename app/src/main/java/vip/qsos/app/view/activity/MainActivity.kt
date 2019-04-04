@@ -11,6 +11,7 @@ import qsos.module.common.aac.BaseModuleActivity
 import qsos.module.common.view.mvp.view.adapter.NavigationPagerAdapter
 import vip.qsos.app.R
 import vip.qsos.tuchong.view.fragment.TCRecommendFragment
+import vip.qsos.widgets.view.WidgetsFragment
 
 /**
  * @author : 华清松
@@ -24,10 +25,14 @@ class MainActivity : BaseModuleActivity() {
     private var mTitles = arrayListOf<String>()
 
     private var tcRecommendFragment = TCRecommendFragment()
+    private var widgetsFragment = WidgetsFragment()
 
     override fun initData(savedInstanceState: Bundle?) {
         ActivityUtils.instance.addActivity(this)
         ActivityUtils.instance.finishAllButNotMe(this)
+
+        mTitles.add("控件")
+        viewList.add(widgetsFragment)
 
         mTitles.add("图虫")
         viewList.add(tcRecommendFragment)

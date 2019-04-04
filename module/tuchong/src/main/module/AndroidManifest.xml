@@ -5,8 +5,8 @@
     <application
         android:name="vip.qsos.tuchong.TcApplication"
         android:allowBackup="true"
-        android:label="@string/module_tc"
         android:icon="@drawable/ic_launcher"
+        android:label="@string/module_tc"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
 

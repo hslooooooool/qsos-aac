@@ -83,11 +83,14 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    api project(":module:common")
     // 图虫
     if (tcIsModule.toBoolean()) {
         api project(":module:tuchong")
-    } else {
-        api project(":module:common")
+    }
+    // 控件
+    if (widgetsIsModule.toBoolean()) {
+        api project(":module:widgets")
     }
 
     api rootProject.ext.dependencies["kotlin"]

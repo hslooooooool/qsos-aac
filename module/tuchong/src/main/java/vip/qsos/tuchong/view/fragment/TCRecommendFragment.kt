@@ -17,7 +17,7 @@ import vip.qsos.tuchong.view.adapter.TCRecommendAdapter
 /**
  * @author : 华清松
  * @date : 2018/12/6
- * @description : 首页-多标签示例
+ * @description : 图虫推荐页面
  */
 class TCRecommendFragment : BaseModuleFragment() {
 
@@ -61,6 +61,7 @@ class TCRecommendFragment : BaseModuleFragment() {
 
     }
 
+    /**判断是否滑到列表底部*/
     private fun isSlideToBottom(recyclerView: RecyclerView?): Boolean {
         if (recyclerView == null) return false
         return recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset() >= recyclerView.computeVerticalScrollRange()

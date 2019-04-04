@@ -16,4 +16,31 @@
         <attr name="progress_bar_color" format="color" />
     </declare-styleable>
 
+    <!--自定义圆配置-->
+    <declare-styleable name="DrawCircleView">
+        <attr name="color" format="color" />
+        <attr name="r" format="integer" />
+        <attr name="c" format="integer" />
+    </declare-styleable>
+
+    <!--自定义图片角标-->
+    <declare-styleable name="LabelImageView">
+        <!--标签文字-->
+        <attr name="text" format="string" />
+        <!--标签文字大小-->
+        <attr name="textSize" format="dimension" />
+        <!--标签文字颜色-->
+        <attr name="textColor" format="color" />
+        <!--标签背景颜色-->
+        <attr name="backgroundColor" format="color" />
+        <!--标签宽度-->
+        <attr name="a" format="integer" />
+        <!--标签距离视图右上角距离-->
+        <attr name="b" format="integer" />
+    </declare-styleable>
+
+    <!--自定义柱状图-->
+    <declare-styleable name="HistogramView">
+        <attr name="count" format="integer" />
+    </declare-styleable>
 </resources>

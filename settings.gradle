@@ -13,3 +13,6 @@ include ':module:common'
 
 // 图虫模块
 include ':module:tuchong'
+
+// 自定义控件模块
+include ':module:widgets'

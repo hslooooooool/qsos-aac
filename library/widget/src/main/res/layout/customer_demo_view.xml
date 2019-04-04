@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <qsos.library.widget.view.draw.DrawCircleView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:c="20"
+                app:color="@color/red"
+                app:r="20" />
+
+            <qsos.library.widget.view.draw.DrawCircleView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:c="20"
+                app:color="@color/red"
+                app:r="20" />
+        </LinearLayout>
+
+        <qsos.library.widget.view.draw.LabelImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_error"
+            app:a="100"
+            app:b="50"
+            app:backgroundColor="@color/red"
+            app:text="HOT"
+            app:textColor="@color/white"
+            app:textSize="14sp" />
+
+        <qsos.library.widget.view.wave.WaveView
+            android:layout_width="100dp"
+            android:layout_height="200dp" />
+
+        <qsos.library.widget.view.draw.HistogramView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
