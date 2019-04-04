@@ -1,4 +1,4 @@
-# Kotlin_AAC
+# [QSOS-AAC](https://github.com/hslooooooool/qsos-aac)
 ## 项目介绍
 安卓AAC框架，完全由Kotlin编写、模块化。 
 集成RxJava、Retrofit、ARouter、Room、Lifecycle等常用框架。 
@@ -32,4 +32,9 @@
 有兴趣请交流。
 - 微信：hslooooooool 
 - Github：hslooooooool
-- 个人博客：www.qsos.vip  www.yuque.com/qsos www.jianshu.com/u/57cc7206b1b2
+- 个人博客：
+- - http://www.qsos.vip  
+- - http://www.yuque.com/qsos 
+- - http://www.jianshu.com/u/57cc7206b1b2 
+- - http://juejin.im/user/57d0b35d2e958a0054483695
+
