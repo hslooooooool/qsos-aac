@@ -3,6 +3,7 @@ package vip.qsos.tuchong.view.adapter
 import android.view.View
 import qsos.library.base.base.BaseAdapter
 import qsos.library.base.base.BaseHolder
+import qsos.library.base.utils.ToastUtils
 import qsos.module.common.api.TCRecommendEntity
 import vip.qsos.tuchong.R
 import vip.qsos.tuchong.view.holder.TCRecommendHolder
@@ -31,7 +32,7 @@ class TCRecommendAdapter(list: ArrayList<TCRecommendEntity.FeedListBean>) : Base
     }
 
     override fun onViewClick(view: View, position: Int) {
-
+        ToastUtils.showToast(view.context, "你点击了第 $position 项")
     }
 
 }

@@ -119,6 +119,7 @@ abstract class BaseFragment : Fragment(), BaseView, View.OnClickListener {
         isFirst = true
     }
 
+    /**隐藏输入键盘*/
     fun hideKeyboard() {
         val imm: InputMethodManager = mContext?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         if (imm.isActive) {
@@ -128,6 +129,7 @@ abstract class BaseFragment : Fragment(), BaseView, View.OnClickListener {
         }
     }
 
+    /**切换通用界面*/
     fun changeView(state: BaseView.STATE) {
         ll_base_not_net?.visibility = View.GONE
         ll_base_404?.visibility = View.GONE
