@@ -1,4 +1,4 @@
-package qsos.module.common.view.mvp.view.adapter
+package qsos.module.common.view.adapter
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

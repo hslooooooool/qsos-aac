@@ -4,7 +4,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.FalsifyFooter
 import com.scwang.smartrefresh.layout.header.FalsifyHeader
 import qsos.module.common.R
-import qsos.module.common.view.mvp.view.ModelApplication
+import qsos.module.common.ModelApplication
 
 /**
  * @author : 华清松

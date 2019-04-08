@@ -1,6 +1,6 @@
 package vip.qsos.tuchong
 
-import qsos.module.common.view.mvp.view.ModelApplication
+import qsos.module.common.ModelApplication
 
 /**
  * @author : 华清松

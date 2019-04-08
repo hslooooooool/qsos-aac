@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import qsos.library.base.routerpath.AppPath
 import qsos.library.base.utils.activity.ActivityUtils
 import qsos.module.common.aac.BaseModuleActivity
-import qsos.module.common.view.mvp.view.adapter.NavigationPagerAdapter
+import qsos.module.common.view.adapter.NavigationPagerAdapter
 import vip.qsos.app.R
 import vip.qsos.tuchong.view.fragment.TCRecommendFragment
 import vip.qsos.widgets.view.WidgetsFragment

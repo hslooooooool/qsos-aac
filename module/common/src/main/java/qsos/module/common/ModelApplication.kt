@@ -1,4 +1,4 @@
-package qsos.module.common.view.mvp.view
+package qsos.module.common
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshHeader
